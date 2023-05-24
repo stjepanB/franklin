@@ -8,12 +8,13 @@ function createSelect(fd) {
     ph.setAttribute('disabled', '');
     select.append(ph);
   }
-  fd.Options.split(',').forEach((o) => {
-    const option = document.createElement('option');
-    option.textContent = o.trim();
-    option.value = o.trim();
-    select.append(option);
-  });
+  fd.Options.split(',')
+    .forEach((o) => {
+      const option = document.createElement('option');
+      option.textContent = o.trim();
+      option.value = o.trim();
+      select.append(option);
+    });
   if (fd.Mandatory === 'x') {
     select.setAttribute('required', 'required');
   }
@@ -105,13 +106,24 @@ function createLabel(fd) {
 function applyRules(form, rules) {
   const payload = constructPayload(form);
   rules.forEach((field) => {
-    const { type, condition: { key, operator, value } } = field.rule;
+    const {
+      type,
+      condition: {
+        key,
+        operator,
+        value
+      }
+    } = field.rule;
     if (type === 'visible') {
       if (operator === 'eq') {
         if (payload[key] === value) {
-          form.querySelector(`.${field.fieldId}`).classList.remove('hidden');
+          form.querySelector(`.${field.fieldId}`)
+            .classList
+            .remove('hidden');
         } else {
-          form.querySelector(`.${field.fieldId}`).classList.add('hidden');
+          form.querySelector(`.${field.fieldId}`)
+            .classList
+            .add('hidden');
         }
       }
     }
@@ -159,7 +171,10 @@ async function createForm(formURL) {
 
     if (fd.Rules) {
       try {
-        rules.push({ fieldId, rule: JSON.parse(fd.Rules) });
+        rules.push({
+          fieldId,
+          rule: JSON.parse(fd.Rules)
+        });
       } catch (e) {
         // eslint-disable-next-line no-console
         console.warn(`Invalid Rule ${fd.Rules}: ${e}`);
