@@ -48,8 +48,9 @@ async function getSuppliedLibrary() {
   const { searchParams } = new URL(window.location.href);
   const repo = searchParams.get('repo');
   const owner = searchParams.get('owner');
-  if (!repo || !owner) return null;
-  return fetchLibrary(`https://color--${repo}--${owner}.hlx.live`);
+  const ref = searchParams.get('ref');
+  if (!repo || !owner || !ref) return null;
+  return fetchLibrary(`https://${ref}--${repo}--${owner}.hlx.live`);
 }
 
 async function fetchAssetsData(path) {
