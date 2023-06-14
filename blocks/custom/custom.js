@@ -41,6 +41,7 @@ export default function decorate(block) {
 
   block.appendChild(form);
 
+  console.log("FORM ");
   // Add event listener to the form submit event
   form.addEventListener('submit', (e) => {
     e.preventDefault(); // Prevent default form submission
