@@ -48,11 +48,12 @@ export default function decorate(block) {
 
     const formData = new FormData(form);
     const formValues = Object.fromEntries(formData.entries());
+    console.log(formValues)
 
     // Send the form data to the API endpoint
     fetch('https://admin.hlx.page/form/stjepanb/franklin/color/form-test.json', {
       method: 'POST',
-      body: JSON.stringify(formValues),
+      body: { data : JSON.stringify(formValues) },
       headers: {
         'Content-Type': 'application/json'
       }
