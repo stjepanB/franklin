@@ -25,7 +25,7 @@ export default function decorate(block) {
   dateInput.required = true;
 
   const submitButton = document.createElement('button');
-  submitButton.type = 'button';
+  submitButton.type = 'submit';
   submitButton.textContent = 'Submit';
 
   form.appendChild(nameLabel);
