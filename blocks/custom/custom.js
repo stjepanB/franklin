@@ -1,8 +1,6 @@
 export default function decorate(block) {
 
 
-  const formContainer = block.textContent;
-
   const form = document.createElement('form');
 
   const nameLabel = document.createElement('label');
@@ -41,7 +39,7 @@ export default function decorate(block) {
   form.appendChild(document.createElement('br'));
   form.appendChild(submitButton);
 
-  formContainer.appendChild(form);
+  block.appendChild(form);
 
   // Add event listener to the form submit event
   form.addEventListener('submit', (e) => {
