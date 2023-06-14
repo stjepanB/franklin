@@ -2,7 +2,7 @@ export default function decorate(block) {
 
 
   const form = document.createElement('form');
-
+  form.classList.add('custom');
   const nameLabel = document.createElement('label');
   nameLabel.textContent = 'Name:';
   const nameInput = document.createElement('input');
