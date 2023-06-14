@@ -51,8 +51,9 @@ export default function decorate(block) {
     console.log(formValues)
 
     // Send the form data to the API endpoint
-    fetch('https://admin.hlx.page/form/stjepanb/franklin/color/form-test', {
+    fetch('https://color--franklin--stjepanb.hlx.page/form-test', {
       method: 'POST',
+      cache: 'no-cache',
       body: JSON.stringify({ data: formValues }),
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
