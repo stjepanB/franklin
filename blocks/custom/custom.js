@@ -55,7 +55,7 @@ export default function decorate(block) {
       method: 'POST',
       body: JSON.stringify({ data: formValues }),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/x-www-form-urlencoded'
       }
     })
       .then(response => response.json())
