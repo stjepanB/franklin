@@ -111,8 +111,8 @@ function applyRules(form, rules) {
       condition: {
         key,
         operator,
-        value
-      }
+        value,
+      },
     } = field.rule;
     if (type === 'visible') {
       if (operator === 'eq') {
@@ -173,7 +173,7 @@ async function createForm(formURL) {
       try {
         rules.push({
           fieldId,
-          rule: JSON.parse(fd.Rules)
+          rule: JSON.parse(fd.Rules),
         });
       } catch (e) {
         // eslint-disable-next-line no-console
