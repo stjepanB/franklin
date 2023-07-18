@@ -65,7 +65,7 @@ export default function decorate(block) {
       })
       .catch((error) => {
         // Handle any errors that occur during the request
-        console.error(error);
+        console.error(error.message);
         // Additional error handling code
       });
   });
